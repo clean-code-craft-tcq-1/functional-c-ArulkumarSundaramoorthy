@@ -1,21 +1,28 @@
-#include <stdio.h>
-#include <assert.h>
+/* *************************************************************************
+* File Name   :	main.c
+* Description : Battery Management System(BMS)
+* Functions	  :
+* ************************************************************************* */
 
-int batteryIsOk(float temperature, float soc, float chargeRate) {
-  if(temperature < 0 || temperature > 45) {
-    printf("Temperature out of range!\n");
-    return 0;
-  } else if(soc < 20 || soc > 80) {
-    printf("State of Charge out of range!\n");
-    return 0;
-  } else if(chargeRate > 0.8) {
-    printf("Charge Rate out of range!\n");
-    return 0;
-  }
-  return 1;
-}
+/* ***************************** Header Files ***************************** */
+#include "stdio.h"
+#include "assert.h"
+#include "bms_rangecheck.h"
 
+/* *************************************************************************
+* Function Name : main
+* Description   : To monitor the Battery
+* Arguments	    : -
+* Returns		: -
+* ************************************************************************* */
 int main() {
-  assert(batteryIsOk(25, 70, 0.7));
-  assert(!batteryIsOk(50, 85, 0));
+
+	/* Battery Range Check */
+	assert(batteryIsOk(25, 70, 0.7));
+	assert(!batteryIsOk(50, 85, 0));	
+	assert(!batteryIsOk(50, 70, 0.7));
+	assert(!batteryIsOk(25, 85, 0.7));
+	assert(!batteryIsOk(25, 70, 0));
+
+    return 0;
 }
