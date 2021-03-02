@@ -15,5 +15,8 @@
 
 /* ***************************** Prototypes ***************************** */
 int batteryIsOk(float temperature, float soc, float chargeRate);
+int rangeCheckTemp(float temperature);
+int rangeCheckSoC(float soc);
+int RangeCheckChargeRate(float chargeRate);
 
 #endif
