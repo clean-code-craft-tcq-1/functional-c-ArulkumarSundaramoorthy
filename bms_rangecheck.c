@@ -52,7 +52,7 @@ int rangeCheckSoC(float soc) {
 	
     if(soc < MIN_SOC)
 	{
-//		printf("\nSoC is Out of Range(Minimum)");
+		//printf("\nSoC is Out of Range(Minimum)");
 		return 1;
 	}
 	else if(soc > MAX_SOC)
@@ -78,7 +78,7 @@ int RangeCheckChargeRate(float chargeRate) {
 	
 	if(chargeRate > 0.8) 
 	{
-//		printf("\nCharge Rate out of range");
+		//printf("\nCharge Rate out of range");
 		return 1;
 	}
 	else 
