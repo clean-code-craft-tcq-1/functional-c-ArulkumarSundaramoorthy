@@ -17,13 +17,13 @@
 * ************************************************************************* */
 int rangeCheckTemp(float temperature) {
 	
-	if(TEMP_UNIT == TEMP_FAHRENHEIT)
+	/*if(TEMP_UNIT == TEMP_FAHRENHEIT)
 	{
 		temperature = (temperature - 32) * (5/9);
 	}
 	else
 	{
-	}
+	}*/
 	
     if(temperature < MIN_TEMP)
 	{
