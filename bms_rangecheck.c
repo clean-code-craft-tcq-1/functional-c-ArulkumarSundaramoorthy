@@ -27,17 +27,17 @@ int rangeCheckTemp(float temperature) {
 	
     if(temperature < MIN_TEMP)
 	{
-		printf("\nTemperature is Out of Range(Minimum)");
+		//printf("\nTemperature is Out of Range(Minimum)");
 		return 1;
 	}
 	else if (temperature > MAX_TEMP)
 	{
-		printf("\nTemperature is Out of Range(Maximum)");
+		//printf("\nTemperature is Out of Range(Maximum)");
 		return 1;
 	}
 	else
 	{
-		printf("\nTempertaure is in valid Range");
+		//printf("\nTempertaure is in valid Range");
 		return 0;
 	}
 }	
@@ -52,17 +52,17 @@ int rangeCheckSoC(float soc) {
 	
     if(soc < MIN_SOC)
 	{
-		printf("\nSoC is Out of Range(Minimum)");
+//		printf("\nSoC is Out of Range(Minimum)");
 		return 1;
 	}
 	else if(soc > MAX_SOC)
 	{
-		printf("\nSoC is Out of Range(Maximum)");
+		//printf("\nSoC is Out of Range(Maximum)");
 		return 1;
 	}
 	else
 	{
-		printf("\nSoC is in valid range");
+		//printf("\nSoC is in valid range");
 		return 0;
 	}
 
@@ -78,12 +78,12 @@ int RangeCheckChargeRate(float chargeRate) {
 	
 	if(chargeRate > 0.8) 
 	{
-		printf("\nCharge Rate out of range");
+//		printf("\nCharge Rate out of range");
 		return 1;
 	}
 	else 
 	{
-		printf("\nCharge Rate is in valid range");
+		//printf("\nCharge Rate is in valid range");
 		return 0;
 	}
 }
@@ -105,13 +105,13 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
 	/* check Battery Charge Rate */
     retval += RangeCheckChargeRate(chargeRate);
 	
-	if(retval == 0)
-	{
-		printf("\n Battery is Good \n");
-	}
-	else
+	/* Accumulate all the three parameters */
+	if(retval == 3)
 	{
 		printf("\n Battery is not Good \n");
+		printf("Temperature is Out of Range\n");
+		printf("SoC is Out of Range\n);
+		printf("Charge Rate out of range\n");
 	}
 	
     return !retval;
