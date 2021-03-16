@@ -99,11 +99,11 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
 	int retval =0;
 	
 	/* check Battery temperature */
-    retval = checkTemp(temperature);
+    retval = rangeCheckTemp(temperature);
 	/* check Battery SoC */
-    retval += checkSoC(soc);
+    retval += rangeCheckSoC(soc);
 	/* check Battery Charge Rate */
-    retval += checkChargeRate(chargeRate);
+    retval += RangeCheckChargeRate(chargeRate);
 	
 	if(retval == 0)
 	{
