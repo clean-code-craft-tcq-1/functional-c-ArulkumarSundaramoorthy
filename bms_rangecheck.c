@@ -110,7 +110,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
 	{
 		printf("\n Battery is not Good \n");
 		printf("Temperature is Out of Range\n");
-		printf("SoC is Out of Range\n);
+		printf("SoC is Out of Range\n");
 		printf("Charge Rate out of range\n");
 	}
 	
